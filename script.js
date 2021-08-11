@@ -46,7 +46,7 @@ function validateInput() {
     input.value = parseInt(+input.value, 10);
   }
   if (+input.value > 100) input.value = 100;
-  if (+input.value < 0) input.value = 0;
+  if (+input.value <= 0) input.value = 0;
 }
 
 function checkNumber(event) {
