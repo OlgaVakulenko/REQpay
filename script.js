@@ -17,6 +17,7 @@ function init() {
     validateInput();
     checkInputValue();
   });
+  input.addEventListener("keyup", (event) => checkNumber(event));
 }
 
 function buttonHandler(direction) {
@@ -46,4 +47,11 @@ function validateInput() {
   }
   if (+input.value > 100) input.value = 100;
   if (+input.value < 0) input.value = 0;
+}
+
+function checkNumber(event) {
+  const key = event.key.toLowerCase();
+  const isNumber = key >= "0" && key <= "9";
+
+  if (!isNumber) input.value = "";
 }
